@@ -24,7 +24,7 @@ jobs:
 
       - name: Ejecutar scraping y actualizar JSON
         run: |
-          python ./scraper_tabla_arusa21.py
+          python ./scraper_tabla_arusa.py
 
       - name: Commit y push si hay cambios
         run: |
