@@ -29,6 +29,12 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install requests beautifulsoup4
+    
+    - name: Ver archivos disponibles (debug)
+      run: |
+        echo "Contenido del workspace:"
+        ls -la ${{ github.workspace }}
+
 
     - name: Ejecutar script (usando path absoluto)
   run: python ${{ github.workspace }}/scraper_tabla_arusa.py
