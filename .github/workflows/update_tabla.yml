@@ -23,9 +23,10 @@ jobs:
           pip install requests beautifulsoup4
 
       - name: Ejecutar scraping y actualizar JSON
-  working-directory: ${{ github.workspace }}
-  run: python scraper_tabla_arusa.py
-
+        run: |
+          ls -la
+          pwd
+          python ./scraper_tabla_arusa.py
 
       - name: Commit y push si hay cambios
         run: |
@@ -34,3 +35,4 @@ jobs:
           git add tabla_arusa.json
           git diff --quiet && git diff --staged --quiet || git commit -m "Actualización automática de tabla"
           git push
+
